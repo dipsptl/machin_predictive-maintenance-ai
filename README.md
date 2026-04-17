@@ -1,4 +1,4 @@
-# ⚙️ Predictive Maintenance AI Dashboard
+# ⚙️ Machine Predictive Maintenance AI Dashboard
 
 This project is a machine learning-based application that predicts machine failure risk using parameters like temperature, vibration, load, and pressure.
 
