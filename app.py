@@ -9,7 +9,7 @@ st.set_page_config(page_title="Predictive Maintenance AI", layout="centered")
 # ===== TITLE =====
 st.markdown("""
 <h1 style='text-align:center; color:#FF8C00;'>
-⚙️ Predictive Maintenance AI Dashboard
+⚙️ Machine Predictive Maintenance AI Dashboard
 </h1>
 """, unsafe_allow_html=True)
 
