@@ -13,6 +13,32 @@ st.markdown("""
 </h1>
 """, unsafe_allow_html=True)
 
+def agent_response(query, temp, vib, load, press, result):
+    query = query.lower()
+
+    if "why" in query or "reason" in query:
+        return ai_explanation(temp, vib, load, press, result)
+
+    elif "safe" in query or "status" in query:
+        return "Machine is SAFE" if result == 0 else "Machine is at RISK"
+
+    elif "what to do" in query or "solution" in query:
+        suggestions = []
+
+        if temp > 80:
+            suggestions.append("Reduce temperature")
+        if vib > 40:
+            suggestions.append("Check vibration")
+        if load > 75:
+            suggestions.append("Reduce load")
+        if press > 60:
+            suggestions.append("Check pressure")
+
+        return "Suggested actions: " + ", ".join(suggestions)
+
+    else:
+        return "Please ask about machine status, reason, or solution."
+
 # ===== LOAD DATA =====
 data = pd.read_csv("machine_data.csv")
 
@@ -29,6 +55,10 @@ temp = st.slider("Temperature", 50, 100)
 vib = st.slider("Vibration", 10, 60)
 load = st.slider("Load", 40, 100)
 press = st.slider("Pressure", 20, 80)
+
+if user_query:
+    response = agent_response(user_query, temp, vib, load, press, result)
+    st.success(response)
 
 # ===== PREDICTION =====
 
@@ -80,3 +110,8 @@ try:
     st.pyplot(fig)
 except:
     st.error("Graph not available")
+
+st.markdown("---")
+st.subheader("🤖 Ask AI Agent")
+
+user_query = st.text_input("Ask about machine condition")
