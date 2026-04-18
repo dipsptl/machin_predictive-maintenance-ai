@@ -111,6 +111,8 @@ try:
 except:
     st.error("Graph not available")
 
+# prediction code above
+
 st.markdown("---")
 st.subheader("🤖 Ask AI Agent")
 
