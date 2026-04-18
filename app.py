@@ -115,3 +115,7 @@ st.markdown("---")
 st.subheader("🤖 Ask AI Agent")
 
 user_query = st.text_input("Ask about machine condition")
+
+if user_query:
+    response = agent_response(user_query, temp, vib, load, press, result)
+    st.success(response)
