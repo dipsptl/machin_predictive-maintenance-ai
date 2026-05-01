@@ -13,6 +13,24 @@ st.markdown("""
 </h1>
 """, unsafe_allow_html=True)
 
+# ===== AI EXPLANATION FUNCTION =====
+def ai_explanation(temp, vib, load, press, result):
+    if result == 0:
+        return "Machine is operating within safe limits."
+    else:
+        reasons = []
+        if temp > 80:
+            reasons.append("high temperature")
+        if vib > 40:
+            reasons.append("high vibration")
+        if load > 75:
+            reasons.append("high load")
+        if press > 60:
+            reasons.append("high pressure")
+
+        return "Machine is at risk due to " + ", ".join(reasons)
+
+# ===== AI AGENT =====
 def agent_response(query, temp, vib, load, press, result):
     query = query.lower()
 
@@ -34,7 +52,10 @@ def agent_response(query, temp, vib, load, press, result):
         if press > 60:
             suggestions.append("Check pressure")
 
-        return "Suggested actions: " + ", ".join(suggestions)
+        if suggestions:
+            return "Suggested actions: " + ", ".join(suggestions)
+        else:
+            return "No immediate action required."
 
     else:
         return "Please ask about machine status, reason, or solution."
@@ -56,12 +77,7 @@ vib = st.slider("Vibration", 10, 60)
 load = st.slider("Load", 40, 100)
 press = st.slider("Pressure", 20, 80)
 
-if user_query:
-    response = agent_response(user_query, temp, vib, load, press, result)
-    st.success(response)
-
 # ===== PREDICTION =====
-
 st.markdown("---")
 st.subheader("📊 Prediction Result")
 
@@ -80,10 +96,7 @@ Failure Risk: {prob*100:.1f} %
 """, unsafe_allow_html=True)
 
 # ===== SUGGESTIONS =====
-st.write(" ")
 st.subheader("💡 Suggestions")
-
-st.write(" ")
 
 if temp > 80:
     st.warning("High temperature – cooling needed")
@@ -111,8 +124,7 @@ try:
 except:
     st.error("Graph not available")
 
-# prediction code above
-
+# ===== AI CHAT SECTION =====
 st.markdown("---")
 st.subheader("🤖 Ask AI Agent")
 
