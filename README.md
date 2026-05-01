@@ -1,22 +1,72 @@
 # ⚙️ Machine Predictive Maintenance AI Dashboard
 
-This project is a machine learning-based application that predicts machine failure risk using parameters like temperature, vibration, load, and pressure.
+An AI-powered predictive maintenance system that uses Machine Learning to predict machine failure risk based on real-time industrial parameters.
 
-## 🔹 Features
-- Predicts machine safety (Safe / Risk)
-- Displays failure probability (%)
-- Provides maintenance suggestions
-- Includes data visualization
+---
 
-## 🔹 Technologies Used
-- Python
-- Streamlit
-- Scikit-learn
-- Pandas
-- Matplotlib
+## 🚀 Overview
+This project helps identify potential machine failures before they occur by analyzing key operational parameters such as temperature, vibration, load, and pressure.
 
-## 🔹 How to Run
+It enables proactive maintenance and reduces unexpected downtime.
+
+---
+
+## 📷 Dashboard Preview
+![Predictive Maintenance Dashboard](dashboard.png)
+
+*Interactive dashboard showing machine health status, failure probability, and real-time inputs.*
+
+---
+
+## 💡 Problem
+Industrial machines often fail unexpectedly due to lack of early warning systems, leading to:
+- Production downtime  
+- High maintenance cost  
+- Equipment damage  
+
+---
+
+## ✅ Solution
+This system:
+- Predicts machine safety status (Safe / Risk)  
+- Calculates failure probability (%)  
+- Provides maintenance recommendations  
+- Visualizes data in an interactive dashboard  
+
+---
+
+## 🧠 Tech Stack
+- Python  
+- Streamlit  
+- Scikit-learn  
+- Pandas  
+- Matplotlib  
+
+---
+
+## ⚙️ Features
+- Real-time input parameters (temperature, vibration, load, pressure)  
+- Machine learning-based failure prediction  
+- Probability-based risk analysis  
+- Maintenance suggestions  
+- Interactive data visualization  
+
+---
+
+## 🔄 Workflow
+Input Data → ML Model → Prediction → Risk Score → Dashboard Output
+
+---
+
+## 🌐 Live Demo
+👉 https://industrial-ai-assistant.streamlit.app
+
+---
+
+## 💻 Run Locally
 
 ```bash
+git clone https://github.com/DipsPtl/Machine-Predictive-Maintenance-AI-Dashboard.git
+cd Machine-Predictive-Maintenance-AI-Dashboard
 pip install -r requirements.txt
-python -m streamlit run app.py
+streamlit run app.py
