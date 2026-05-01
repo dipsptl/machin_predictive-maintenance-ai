@@ -12,7 +12,8 @@ It enables proactive maintenance and reduces unexpected downtime.
 ---
 
 ## 📷 Dashboard Preview
-![Predictive Maintenance Dashboard](dashboard.png)
+![Predictive Maintenance Dashboard] <img width="429" height="799" alt="Machine Predictive Maintenance AI Dashboard" src="https://github.com/user-attachments/assets/02b8bd99-222d-460a-972b-5cca35fd8bcb" />
+
 
 *Interactive dashboard showing machine health status, failure probability, and real-time inputs.*
 
